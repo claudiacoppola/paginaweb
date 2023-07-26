@@ -1,0 +1,50 @@
+@media screen and (max-width:800px) {
+
+    .menu-visible{
+        display: none;
+    }
+
+    .menu-invisible{
+       
+        display: flex;
+        align-items:center;
+        justify-content:center;
+        background:rgba(0,0,0,0.9);
+        
+    }
+
+    .op-mi{
+        
+        display: none;
+        font-size:0.9em;
+        align-items:center;
+        justify-content:center;
+        
+    }
+
+    .op-mv{
+        
+        display: block;
+        font-size:0.9em;
+        transform: rotate(90deg);
+        margin-left:100vw;
+       
+        font-weight: bold;
+        font-size:0.6rem;
+        
+    }
+
+    .contenedor1,
+    .contenedor2{
+        display:none;
+    }
+
+    body{
+        width: 100vw;
+        height:100vh;
+        display:flex;
+        align-items:center;
+        justify-content:center;
+    }
+
+}

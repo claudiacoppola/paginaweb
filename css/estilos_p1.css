@@ -1,0 +1,147 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    z-index: 1;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background-color: black;
+    flex-direction: column;
+}
+
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 10vh;
+    color: white;
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    z-index: 800;
+    flex-direction: row;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+.contenedor1 {
+    position: absolute;
+    left: 50px;
+    top: 70vh;
+    width: 10vw;
+    height: 10vh;
+    text-align: center;
+    color: white;
+    border: 1px solid white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 900;
+    flex-direction: column;
+    font-family: 'Ubuntu', sans-serif;
+    transition: 1s;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.contenedor1:hover {
+    background: rgba(255, 255, 255, 0.3);
+    cursor: pointer;
+}
+
+.contenedor2 {
+    position: absolute;
+    padding-left: 100px;
+    width: 100vw;
+    height: 100vh;
+    font-size: 2em;
+    color: white;
+    border: 1px solid white;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    z-index: 600;
+    flex-direction: column;
+    font-family: 'Ubuntu', sans-serif;
+    text-align: left;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.video1,
+.video2,
+.video3 {
+    opacity: 0.8;
+}
+
+#carrusel {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#carrusel video {
+    display: none;
+}
+
+#carrusel video:first-child {
+    display: block;
+}
+/*
+La pseudo-clase :first-child en CSS se utiliza para seleccionar el primer elemento hijo de su elemento padre.
+Esta pseudo-clase permite aplicar estilos específicos solo al primer elemento hijo de un tipo determinado dentro de su contenedor.
+*/
+
+a {
+    text-decoration: none;
+    color: white;
+    margin: 12px;
+    margin-left: 15px;
+}
+
+.subrayado {
+    position: relative;
+    text-decoration: none;
+}
+
+/*
+El selector ::after se utiliza para añadir contenido adicional después del contenido de un elemento seleccionado.
+Se conoce como un pseudo-elemento, ya que crea un elemento que no existe en el código HTML,
+pero que se inserta en el contenido después del elemento seleccionado.
+*/
+
+.subrayado::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 0;
+    height: 2px;
+    background-color: rgb(28, 180, 218);
+    transition: width 1s;
+}
+
+.subrayado:hover::after {
+    width: 100%;
+}
+
+.menu-invisible{
+    display: none;
+}
+

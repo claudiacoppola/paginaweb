@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Build Your Dreams</title>
+    <link rel="icon" href="img/logo_BYD.png">
+    <link rel="stylesheet" href="css/estilos_p1.css">
+    <link rel="stylesheet" href="css/media_p1.css">
+    <meta charset="utf-8">
+    <meta name="author" content="Claudia Coppola">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap" rel="stylesheet">
+    <meta name="description" content="Estructura HTML5">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="js/carrusel.js"></script>
+</head>
+
+<body>
+     <nav class="menu-visible">
+        <a href="#" class="subrayado">Home</a>
+        <a href="#" class="subrayado">Electric future</a>
+        <a href="#" class="subrayado">Digital Journey</a>
+        <a href="#" class="subrayado" style="margin-right:33px;">Contact Us</a>
+    </nav>
+    
+    <nav class="menu-invisible">
+      <a href="#"><div class="op-mv" id="myButton">|&nbsp;|&nbsp;|</div></a>
+      <div class="sub-inv" >
+        <a href="#"><div class="op-mi">Home</div></a>
+        <a href="#"><div class="op-mi">Electric future</div></a>
+        <a href="#"><div class="op-mi">Digital Journey</div></a>
+        <a href="#"><div class="op-mi">Contact Us</div></a>
+      </div>
+  </nav>
+
+    <a href="#">
+        <div class="contenedor1">
+            Explorar
+        </div>
+    </a>
+
+    <div class="contenedor2">
+        <h1>A video podcast about <br> electric driving myths</h1>
+    </div>
+    
+    <div id="carrusel">
+        <video src="video/parte1.mp4" autoplay loop muted class="video1"></video>
+        <video src="video/parte2.mp4" autoplay loop muted class="video2"></video>
+        <video src="video/parte3.mp4" autoplay loop muted class="video3"></video>
+    </div>
+<script>
+    $(function() {
+  function slideMenu() {
+    var activeState = $("#menu-container .menu-list").hasClass("active");
+    $("#menu-container .menu-list").animate({left: activeState ? "0%" : "-100%"}, 400);
+  }
+  $("#menu-wrapper").click(function(event) {
+    event.stopPropagation();
+    $("#hamburger-menu").toggleClass("open");
+    $("#menu-container .menu-list").toggleClass("active");
+    slideMenu();
+
+    $("body").toggleClass("overflow-hidden");
+  });
+
+  $(".menu-list").find(".accordion-toggle").click(function() {
+    $(this).next().toggleClass("open").slideToggle("fast");
+    $(this).toggleClass("active-tab").find(".menu-link").toggleClass("active");
+
+    $(".menu-list .accordion-content").not($(this).next()).slideUp("fast").removeClass("open");
+    $(".menu-list .accordion-toggle").not(jQuery(this)).removeClass("active-tab").find(".menu-link").removeClass("active");
+  });
+}); // jQuery load
+
+</script>
+</body>
+</html>
